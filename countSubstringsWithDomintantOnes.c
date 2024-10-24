@@ -3,29 +3,26 @@
 #include <string.h>
 // count >= (strlen(s)-count)
 int numberOfSubstrings(char* s) {
-  int i, j, k, count, numberOfSub, len;
-  i = 0;
-  len = strlen(s);
-  j = len;
-  count = numberOfSub = 0;
+  int len = strlen(s);
+  int* prefixOnes = (int*)malloc((len + 1) * sizeof(int));
+  int i, j, numberOfSub = 0;
 
-  while (j > 0) {
-    for (k = i; k < j+i; k++) {
-      if (s[k] == '1')
-        count++;
-    }
-    if (count >= (j-count)*(j-count)) {
-      numberOfSub++;
-    }
-    count = 0;
-    if (k + 1 > len) {
-      i = 0;
-      j--;
-    } 
-    else
-      i++;
+  prefixOnes[0] = 0;
+  for (i = 1; i <= len; i++) {
+    prefixOnes[i] = prefixOnes[i-1] + (s[i-1] == '1' ? 1 : 0);
   }
 
+  for (i = 0; i < len; i++) {
+    for (j = i + 1; j <= len; j++) {
+      int count = prefixOnes[j] - prefixOnes[i]; 
+      int substringLength = j - i;
+      if (count >= (substringLength - count) * (substringLength - count)) {
+        numberOfSub++;
+      }
+    }
+  }
+
+  free(prefixOnes);
   return numberOfSub;
 }
 
@@ -45,15 +42,9 @@ int main () {
   return 0;
 }
 /**
-1 -> 1
-2 -> 3
-3 -> 6
-4 -> 10
-5 ->
- */
+O(n^3) solution -> my first try
 
- /*
- int numberOfSubstrings(char* s) {
+int numberOfSubstrings(char* s) {
   int i, j, k, count, numberOfSub, len;
   i = 0;
   len = strlen(s);
@@ -61,22 +52,17 @@ int main () {
   count = numberOfSub = 0;
 
   while (j > 0) {
-    printf("analyzing s[%d] to s[%d]...\n", i, j-1+i);
     for (k = i; k < j+i; k++) {
       if (s[k] == '1')
         count++;
     }
-    printf("count = %d | zeros = %d | cmp = %d\n", count, j - count, (j-count)*(j-count));
     if (count >= (j-count)*(j-count)) {
-      printf("\nLOL s[%d] to s[%d]\n",  i, j-1+i);
       numberOfSub++;
     }
     count = 0;
-    printf("\n\n");
     if (k + 1 > len) {
       i = 0;
       j--;
-      printf("\tproximo intervalo de %d em %d\n", j, j);
     } 
     else
       i++;
