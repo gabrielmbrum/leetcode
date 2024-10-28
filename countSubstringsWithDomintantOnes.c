@@ -5,7 +5,7 @@
 int numberOfSubstrings(char* s) {
   int len = strlen(s);
   int* prefixOnes = (int*)malloc((len + 1) * sizeof(int));
-  int i, j, numberOfSub = 0;
+  int i, j, numberOfSub = 0, count, substringLength;
 
   prefixOnes[0] = 0;
   for (i = 1; i <= len; i++) {
@@ -14,9 +14,9 @@ int numberOfSubstrings(char* s) {
 
   for (i = 0; i < len; i++) {
     for (j = i + 1; j <= len; j++) {
-      int count = prefixOnes[j] - prefixOnes[i]; 
-      int substringLength = j - i;
-      if (count >= (substringLength - count) * (substringLength - count)) {
+      count = prefixOnes[j] - prefixOnes[i]; 
+      substringLength = j - i - count; //minus count is to optimize the next comparation
+      if (count >= (substringLength) * (substringLength)) {
         numberOfSub++;
       }
     }
