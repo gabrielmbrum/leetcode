@@ -5,4 +5,5 @@ this repo contains all my problems solved in leetcode
 <ul>
   <li><a href="https://leetcode.com/problems/all-elements-in-two-binary-search-trees/description/">all elements in two binary search trees</a></li>
   <li><a href="https://leetcode.com/problems/count-the-number-of-substrings-with-dominant-ones/description/">count the number of substrings</a></li>
+  <li><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/description/">median of two sorted arrays</a><li>
 </ul>
