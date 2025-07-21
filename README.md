@@ -7,4 +7,5 @@ this repo contains all my problems solved in leetcode
   <li><a href="https://leetcode.com/problems/count-the-number-of-substrings-with-dominant-ones/description/">count the number of substrings</a></li>
   <li><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/description/">median of two sorted arrays</a></li>
   <li><a href="https://leetcode.com/problems/count-beautiful-substrings-i/description/"> count beatiful substrings I</a></li>
+  <li><a href="https://leetcode.com/problems/non-overlapping-intervals/description/"/> non-overlapping intervals</a></li>
 </ul>
