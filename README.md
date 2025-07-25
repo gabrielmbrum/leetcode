@@ -8,6 +8,7 @@ this repo contains all problems i've solved in leetcode ;)
 
 <ul>
   <li><a href="https://leetcode.com/problems/two-sum/description/">two sum</a></li>
+  <li><a href="https://leetcode.com/problems/palindrome-number/description/">palindrome number</a></li>
 </ul>
 
 ### medium
