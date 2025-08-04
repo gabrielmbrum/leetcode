@@ -19,6 +19,7 @@ this repo contains all problems i've solved in leetcode ;)
   <li><a href="https://leetcode.com/problems/count-beautiful-substrings-i/description/"> count beatiful substrings I</a></li>
   <li><a href="https://leetcode.com/problems/count-the-number-of-substrings-with-dominant-ones/description/">count the number of substrings with dominant ones</a></li>
   <li><a href="https://leetcode.com/problems/non-overlapping-intervals/description/"/> non-overlapping intervals</a></li>
+  <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/description"/> longest substring without repeating characters</a></li>
 </ul>
 
 ### hard
